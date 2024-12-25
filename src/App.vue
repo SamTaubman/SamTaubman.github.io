@@ -1,26 +1,57 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="landscape">
+    <div class="mountain"></div>
+    <div class="mountain mountain-2"></div>
+    <div class="mountain mountain-3"></div>
+    <div class="sun-container sun-container-1">
+    </div>
+    <div class="sun-container">
+      <div class="sun"></div>
+    </div>
+    <div class="cloud"></div>
+    <div class="cloud cloud-1"></div>
+    <div class="sun-container sun-container-reflection">
+      <div class="sun"></div>
+    </div>
+    <div class="light"></div>
+    <div class="light light-1"></div>
+    <div class="light light-2"></div>
+    <div class="light light-3"></div>
+    <div class="light light-4"></div>
+    <div class="light light-5"></div>
+    <div class="light light-6"></div>
+    <div class="light light-7"></div>
+    <div class="water"></div>
+    <div class="splash"></div>
+    <div class="splash delay-1"></div>
+    <div class="splash delay-2"></div>
+    <div class="splash splash-4 delay-2"></div>
+    <div class="splash splash-4 delay-3"></div>
+    <div class="splash splash-4 delay-4"></div>
+    <div class="splash splash-stone delay-3"></div>
+    <div class="splash splash-stone splash-4"></div>
+    <div class="splash splash-stone splash-5"></div>
+    <div class="lotus lotus-1"></div>
+    <div class="lotus lotus-2"></div>
+    <div class="lotus lotus-3"></div>
+    <div class="trash-container"></div>
+    <div class="front">
+      <div class="stone"></div>
+      <div class="grass"></div>
+      <div class="grass grass-1"></div>
+      <div class="grass grass-2"></div>
+      <div class="reed"></div>
+      <div class="reed reed-1"></div>
+    </div>
+  </div>
+  <div class="logo"></div>
+  <h1 class="money"></h1>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style src="./assets/styles.css"></style>
