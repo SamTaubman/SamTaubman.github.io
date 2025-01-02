@@ -18,14 +18,14 @@ body {
   z-index: 100;
 }
 
-.logo::before {
+/* .logo::before {
   content: "";
   background: url(/Users/samtaubman/Personal_Website/samtaubman.github.io/src/assets/imgs/logo.png);
   position: absolute;
   width: 100%;
   height: 100%;
   background-size: cover;
-}
+} */
 
 /* .logo::after {
   content: '';
