@@ -8,19 +8,67 @@
       color="primary"
       text-color="white"
     >
+      <div class="banner-left">
+        <h4 class="banner-text">Sam Taubman</h4>
+      </div>
       <template v-slot:avatar>
         <q-icon name="announcement" color="white" />
       </template>
       <template v-slot:action>
         <div class="banner-actions">
-          <q-btn flat label="LinkedIn" color="black" @click="onLinkedIn" />
-          <q-btn flat label="YouTube" color="black" @click="onYouTube" />
-          <q-btn flat label="GitHub" color="black" @click="onGitHub" />
-          <q-btn flat label="Email" color="black" @click="onEmail" />
-          <q-btn flat label="About" color="black" @click="onAbout" />
-          <q-btn flat label="Resume" color="black" @click="onResume" />
-          <q-btn flat label="Projects" color="black" @click="onProjects" />
-          <q-btn flat label="Toggle" color="black" @click="onToggle" />
+          <q-btn 
+            flat
+            class="btn-linkedin" 
+            @click="onLinkedIn" 
+            icon="ion-logo-linkedin" 
+          />
+          <q-btn 
+            flat
+            color="black" 
+            class="btn-youtube" 
+            @click="onYouTube" 
+            icon="ion-logo-youtube" 
+          />
+          <q-btn 
+            flat
+            class="btn-github" 
+            @click="onGitHub" 
+            icon="ion-logo-github" 
+          />
+          <a href="mailto:taubmansam@gmail.com">
+            <q-btn
+              flat
+              class="btn-email" 
+              icon="email" 
+            />
+          </a>
+          <q-btn 
+            flat 
+            label="About" 
+            color="black" 
+            class="btn-about" 
+            @click="onAbout" 
+          />
+          <q-btn 
+            flat 
+            label="Resume" 
+            color="black" 
+            class="btn-resume" 
+            @click="onResume"
+          />
+          <q-btn 
+            flat 
+            label="Projects" 
+            color="black" 
+            class="btn-projects" 
+            @click="onProjects"
+          />
+          <q-btn 
+            flat
+            class="btn-toggle" 
+            @click="onToggle" 
+            icon="ion-close"
+          />
         </div>
       </template>
     </q-banner>
@@ -78,10 +126,19 @@
 export default {
   name: 'App',
   methods: {
-    onLearnMore() {
-      alert('Learn more about this scene!');
+    onLinkedIn() {
+      window.open('https://www.linkedin.com/in/samtaubman/', '_blank');
     },
-    onDismiss() {
+
+    onYouTube() {
+      window.open('https://www.youtube.com/@samtaubman', '_blank');
+    },
+
+    onGitHub() {
+      window.open('https://github.com/SamTaubman', '_blank');
+    },
+
+    onToggle() {
       alert('Banner dismissed.');
     },
   },
@@ -96,6 +153,48 @@ export default {
   width: 100%;
   height: 100vh;
   overflow: hidden;
+}
+
+.banner-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+.banner-text {
+  font-size: 1.5rem;
+  color: #000000;
+  margin: 0;
+}
+
+.btn-linkedin .q-icon {
+  color: #0077B5
+}
+
+.btn-youtube .q-icon {
+  color: #FF0000
+}
+
+.btn-github .q-icon {
+  color: #000000
+}
+
+.btn-email .q-icon {
+  color: #ffffff;
+  background-color: #089cff;
+}
+
+.btn-toggle .q-icon {
+  color: #000000;
+}
+
+.banner-actions {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .overlay-banner {
@@ -115,6 +214,5 @@ export default {
   width: 100%;
   height: 100%;
 }
-
 
 </style>
