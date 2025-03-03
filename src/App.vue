@@ -65,6 +65,12 @@
           />
           <q-btn 
             flat
+            class="btn-mode" 
+            @click="onSwitchMode" 
+            icon="ion-moon"
+          />
+          <q-btn 
+            flat
             class="btn-toggle" 
             @click="onToggle" 
             icon="ion-close"
@@ -72,6 +78,20 @@
         </div>
       </template>
     </q-banner>
+
+    <q-dialog v-model="showAbout">
+      <q-card class="about-dialog">
+        <q-card-actions align="right">
+          <q-btn flat icon="ion-close" color="black" @click="showAbout = false" />
+        </q-card-actions>
+        <q-card-section>
+          <div class="text-h6">About Me</div>
+        </q-card-section>
+        <q-card-section>
+          <p>Sup.</p>
+        </q-card-section>
+      </q-card>
+    </q-dialog>
 
     <div class="landscape">
       <div class="mountain"></div>
@@ -125,6 +145,11 @@
 <script>
 export default {
   name: 'App',
+  data() {
+    return {
+      showAbout: false,
+    };
+  },
   methods: {
     onLinkedIn() {
       window.open('https://www.linkedin.com/in/samtaubman/', '_blank');
@@ -136,6 +161,10 @@ export default {
 
     onGitHub() {
       window.open('https://github.com/SamTaubman', '_blank');
+    },
+
+    onAbout() {
+      this.showAbout = true;
     },
 
     onToggle() {
@@ -185,6 +214,10 @@ export default {
   background-color: #089cff;
 }
 
+.btn-mode .q-icon {
+  color: #000000
+}
+
 .btn-toggle .q-icon {
   color: #000000;
 }
@@ -206,6 +239,12 @@ export default {
   width: 100%;
   /* max-width: 100px; */
   border-radius: 0 0 8px 8px;
+}
+
+.about-dialog {
+  width: 100vh;
+  min-width: 300px;
+  max-height: 90vh;
 }
 
 .landscape {
