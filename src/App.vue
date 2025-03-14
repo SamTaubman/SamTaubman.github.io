@@ -69,12 +69,12 @@
             @click="onSwitchMode" 
             icon="ion-moon"
           />
-          <q-btn 
+<!--           <q-btn 
             flat
             class="btn-toggle" 
             @click="onToggle" 
             icon="ion-close"
-          />
+          /> -->
         </div>
       </template>
     </q-banner>
@@ -87,7 +87,8 @@
         <q-card-section>
           <div class="text-h6">About Me</div>
         </q-card-section>
-        <q-card-section>
+        <q-card-section class="about-content">
+          <img src="../public/profile.jpg" alt="Profile Picture" class="about-image" />
           <p>Sup.</p>
         </q-card-section>
       </q-card>
@@ -241,10 +242,39 @@ export default {
   border-radius: 0 0 8px 8px;
 }
 
+.q-card {
+  width: 100% !important;
+}
+
+.q-dialog {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .about-dialog {
-  width: 100vh;
-  min-width: 300px;
+  width: 90vw !important;
+  max-width: 1200px !important;
+  height: 80vh;
   max-height: 90vh;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-image {
+  width: 150px;
+  height: auto;
+  border-radius: 25%;
+  object-fit: cover;
+  overflow: hidden;
 }
 
 .landscape {
