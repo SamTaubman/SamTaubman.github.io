@@ -9,7 +9,7 @@
       text-color="white"
     >
       <div class="banner-left">
-        <h4 class="banner-text">Sam Taubman</h4>
+        <h4 class="banner-text">Sam Taubman | Data Engineer</h4>
       </div>
       <template v-slot:avatar>
         <q-icon name="announcement" color="white" />
@@ -60,7 +60,7 @@
             flat 
             label="Projects" 
             color="black" 
-            class="btn-projects" 
+            class="btn-projects"
             @click="onProjects"
           />
           <q-btn 
@@ -96,14 +96,14 @@
             <a href="https://catalog.gatech.edu/programs/computer-science-ms/" target="_blank" class="georgiatech-link">
               Georgia Tech
             </a>
-            specializing in Computing Systems. In 2024 I worked in the 
+            specializing in Computing Systems. In 2024 I worked on the SAMI project in the 
             <a href="https://dilab.gatech.edu/sami/" target="_blank" class="dilab-link">
               Design Intelligence Lab
             </a>
-            at Georgia Tech under Dr. Ashok Goel's supervision. During that time
+            at Georgia Tech under Dr. Ashok Goels supervision. <!-- During that time
             I worked on improving the SAMI project which matches students based on introduction posts
             by adding personality detection using a support vector machine ensemble with bagging model
-            trained on the output of GPT-4o mini and BERT.
+            trained on the output of GPT-4o mini and BERT. -->
             <br>
             <br>
             I have an interest in databases, low level computing, networking,
@@ -111,8 +111,38 @@
             <a href="https://www.youtube.com/@samtaubman" target="_blank" class="youtube-link">
               YouTube
             </a>
-            channel. Outside of that I enjoy working out, cooking, painting, and recently I've gotten into Chess.
+            channel. Outside of that I enjoy working out, cooking, painting, and recently have gotten into chess.
           </p>
+        </q-card-section>
+      </q-card>
+    </q-dialog>
+
+    <q-dialog v-model="showResume">
+      <q-card class="resume-dialog">
+        <q-card-actions class="resume-header">
+          <div class="text-h5">Resume</div>
+          <q-btn 
+            color="primary" 
+            label="Download PDF" 
+            class="download-btn"
+            href="/SamTaubman_Resume2025.pdf" 
+            target="_blank"
+            download
+            style="margin-left: 15px;"
+          />
+          <q-space />
+          <q-btn flat icon="ion-close" color="black" @click="showResume = false" />
+        </q-card-actions>
+        <q-card-section class="resume-content">
+
+<!--           <p>🎓 M.S. Computer Science @ Georgia Tech (Ongoing)<br></p>
+        <p>🎓 B.S. Chemistry @ Appalachian State University<br></p>
+        <p>💼 Curr. Data Engineer @ Geneva Trading<br></p>
+        <p>💼 Prev. Data Engineer Intern @ Geneva Trading<br></p>
+        <p>💼 Prev. Coding Instructor @ Brains and Motion Education<br></p>
+        <p>💼 Prev. Data Engineer Intern @ Keena Healthcare Technology<br></p>
+        <p>💼 Prev. Data Analyst @ Eurofins PSS at Biogen<br></p>
+        <p>💼 Prev. Product Engineer Intern @ Pneuma Respiratory<br></p> -->
         </q-card-section>
       </q-card>
     </q-dialog>
@@ -172,6 +202,7 @@ export default {
   data() {
     return {
       showAbout: false,
+      showResume: false,
     };
   },
   methods: {
@@ -189,6 +220,10 @@ export default {
 
     onAbout() {
       this.showAbout = true;
+    },
+
+    onResume() {
+      this.showResume = true;
     },
 
     onToggle() {
@@ -278,10 +313,10 @@ export default {
 }
 
 .about-dialog {
-  width: 90vw !important;
+  width: 60vw !important;
   max-width: 1200px !important;
-  height: 80vh;
-  max-height: 90vh;
+  height: 55vh;
+  max-height: 55vh;
   padding: 30px;
   border-radius: 12px;
 }
@@ -291,7 +326,7 @@ export default {
 }
 
 .about-image {
-  width: 150px;
+  width: 175px;
   height: auto;
   flex-shrink: 0;
   border-radius: 25%;
@@ -373,6 +408,56 @@ export default {
 .youtube-link:hover {
   /*color: #ff4500;*/
   text-decoration: underline;
+}
+
+.resume-dialog {
+  width: 90vw !important;
+  max-width: 1200px !important;
+  height: 80vh;
+  max-height: 80vh;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.resume-content {
+  overflow: hidden;
+}
+
+.resume-image {
+  width: 175px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 25%;
+  float: left;
+  margin-right: 20px;
+  object-fit: cover;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+@media (max-width: 1024px) {
+  .resume-image {
+    width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .resume-image {
+    width: 100px;
+  }
+}
+
+.resume-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.resume-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #000000;
 }
 
 .landscape {
