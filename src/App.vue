@@ -81,15 +81,38 @@
 
     <q-dialog v-model="showAbout">
       <q-card class="about-dialog">
-        <q-card-actions align="right">
+        <q-card-actions class="about-header">
+          <div class="text-h5">About</div>
+          <q-space />
           <q-btn flat icon="ion-close" color="black" @click="showAbout = false" />
         </q-card-actions>
-        <q-card-section>
-          <div class="text-h6">About Me</div>
-        </q-card-section>
         <q-card-section class="about-content">
           <img src="../public/profile.jpg" alt="Profile Picture" class="about-image" />
-          <p>Sup.</p>
+          <p>
+            Hi, I'm a Data Engineer at 
+            <a href="https://www.genevatrading.com/" target="_blank" class="geneva-link">
+              Geneva Trading</a>.
+            I'm also pursuing an M.S. in CS at
+            <a href="https://catalog.gatech.edu/programs/computer-science-ms/" target="_blank" class="georgiatech-link">
+              Georgia Tech
+            </a>
+            specializing in Computing Systems. In 2024 I worked in the 
+            <a href="https://dilab.gatech.edu/sami/" target="_blank" class="dilab-link">
+              Design Intelligence Lab
+            </a>
+            at Georgia Tech under Dr. Ashok Goel's supervision. During that time
+            I worked on improving the SAMI project which matches students based on introduction posts
+            by adding personality detection using a support vector machine ensemble with bagging model
+            trained on the output of GPT-4o mini and BERT.
+            <br>
+            <br>
+            I have an interest in databases, low level computing, networking,
+            and algorithms. I also post LeetCode and other content to my  
+            <a href="https://www.youtube.com/@samtaubman" target="_blank" class="youtube-link">
+              YouTube
+            </a>
+            channel. Outside of that I enjoy working out, cooking, painting, and recently I've gotten into Chess.
+          </p>
         </q-card-section>
       </q-card>
     </q-dialog>
@@ -264,17 +287,92 @@ export default {
 }
 
 .about-content {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+  overflow: hidden;
 }
 
 .about-image {
   width: 150px;
   height: auto;
+  flex-shrink: 0;
   border-radius: 25%;
+  float: left;
+  margin-right: 20px;
   object-fit: cover;
   overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+@media (max-width: 1024px) {
+  .about-image {
+    width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-image {
+    width: 100px;
+  }
+}
+
+.about-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.about-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #000000;
+}
+
+.geneva-link {
+  color: #013448;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.geneva-link:hover {
+  /*color: #ff4500;*/
+  text-decoration: underline;
+}
+
+.georgiatech-link {
+  color: #B3A369;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.georgiatech-link:hover {
+  /*color: #ff4500;*/
+  text-decoration: underline;
+}
+
+.dilab-link {
+  color: #6dd47f;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.dilab-link:hover {
+  /*color: #ff4500;*/
+  text-decoration: underline;
+}
+
+.youtube-link {
+  color: #ff0000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.youtube-link:hover {
+  /*color: #ff4500;*/
+  text-decoration: underline;
 }
 
 .landscape {
