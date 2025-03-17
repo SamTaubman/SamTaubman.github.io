@@ -133,16 +133,57 @@
           <q-space />
           <q-btn flat icon="ion-close" color="black" @click="showResume = false" />
         </q-card-actions>
+        
         <q-card-section class="resume-content">
+          <div class="text-subtitle1"><strong>Sam Taubman</strong></div>
+          <div>staubman6@gatech.edu | 828-406-8815</div>
 
-<!--           <p>🎓 M.S. Computer Science @ Georgia Tech (Ongoing)<br></p>
-        <p>🎓 B.S. Chemistry @ Appalachian State University<br></p>
-        <p>💼 Curr. Data Engineer @ Geneva Trading<br></p>
-        <p>💼 Prev. Data Engineer Intern @ Geneva Trading<br></p>
-        <p>💼 Prev. Coding Instructor @ Brains and Motion Education<br></p>
-        <p>💼 Prev. Data Engineer Intern @ Keena Healthcare Technology<br></p>
-        <p>💼 Prev. Data Analyst @ Eurofins PSS at Biogen<br></p>
-        <p>💼 Prev. Product Engineer Intern @ Pneuma Respiratory<br></p> -->
+          <q-separator spaced />
+
+          <div class="text-h6">Education</div>
+          <p><strong>Georgia Institute of Technology</strong> – M.S. in Computer Science, GPA: 4.0 (Expected Aug 2026)</p>
+          <p><strong>Appalachian State University</strong> – B.S. in Chemistry, Honors Student (May 2022)</p>
+
+          <q-separator spaced />
+
+          <div class="text-h6">Experience</div>
+
+          <p><strong>Data Engineer</strong> – Geneva Trading (Aug 2024 – Present)</p>
+          <ul>
+            <li>Created firm performance dashboards using Qlik Sense and SQL, enabling data-driven decisions</li>
+            <li>Developed an automated exchange reconciliation job saving 30 minutes of manual work per day</li>
+            <li>Built a website integrating NetSuite with SQL databases using Flask & Vue.js</li>
+          </ul>
+
+          <p><strong>Data Engineer Intern</strong> – Geneva Trading (June 2024 – Aug 2024)</p>
+          <ul>
+            <li>Built a website simplifying SQL database management with Flask & Vue.js</li>
+            <li>Developed a Q library in C++ enabling access to multiple databases</li>
+          </ul>
+
+          <p><strong>Research Assistant</strong> – Georgia Tech (May 2024 – Dec 2024)</p>
+          <ul>
+            <li>Implemented GPT-4 and BERT models to predict personality traits for student matching</li>
+          </ul>
+
+          <p><strong>Data Engineer Intern</strong> – Keena Healthcare Technology (May 2023 – Aug 2023)</p>
+          <ul>
+            <li>Automated monthly insurance reports using SQL, saving 10 hours per month</li>
+          </ul>
+
+          <q-separator spaced />
+
+          <div class="text-h6">Skills</div>
+          <p><strong>Backend:</strong> Python, Flask, C++, Java</p>
+          <p><strong>Frontend:</strong> JavaScript, Vue.js, Quasar, HTML, CSS</p>
+          <p><strong>Databases/ML:</strong> SQL Server, MongoDB, ClickHouse, KDB, scikit-learn</p>
+          <p><strong>Tools:</strong> Git, Docker, Linux, Qlik Sense</p>
+
+          <q-separator spaced />
+
+          <div class="text-h6">Projects</div>
+          <p><strong>Ravens Agent – AI Computer Vision</strong></p>
+          <p>Developed an AI Agent capable of solving Raven’s Progressive Matrices IQ Test with 85% accuracy.</p>
         </q-card-section>
       </q-card>
     </q-dialog>
@@ -451,6 +492,23 @@ export default {
 .resume-image:hover {
   transform: scale(1.05);
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.resume-header {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1000;
+  padding: 15px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.resume-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 15px;
+  margin-top: 15px;
+  max-height: calc(80vh - 100px);
 }
 
 .resume-content p {
