@@ -136,13 +136,13 @@
         
         <q-card-section class="resume-content">
           <div class="text-subtitle1"><strong>Sam Taubman</strong></div>
-          <div>staubman6@gatech.edu | 828-406-8815</div>
+          <div>taubmansam@gmail.com | staubman6@gatech.edu | 828-406-8815</div>
 
           <q-separator spaced />
 
           <div class="text-h6">Education</div>
-          <p><strong>Georgia Institute of Technology</strong> – M.S. in Computer Science, GPA: 4.0 (Expected Aug 2026)</p>
-          <p><strong>Appalachian State University</strong> – B.S. in Chemistry, Honors Student (May 2022)</p>
+          <p><strong>Georgia Institute of Technology</strong> – M.S. in Computer Science (Computing Systems) - GPA: 4.0 -  Expected Aug 2026</p>
+          <p><strong>Appalachian State University</strong> – B.S. in Chemistry - Honors Student, Chancellor’s Scholar, Dean’s List - May 2022</p>
 
           <q-separator spaced />
 
@@ -150,25 +150,28 @@
 
           <p><strong>Data Engineer</strong> – Geneva Trading (Aug 2024 – Present)</p>
           <ul>
-            <li>Created firm performance dashboards using Qlik Sense and SQL, enabling data-driven decisions</li>
-            <li>Developed an automated exchange reconciliation job saving 30 minutes of manual work per day</li>
-            <li>Built a website integrating NetSuite with SQL databases using Flask & Vue.js</li>
+            <li>Created firm performance dashboards using <b>Qlik Sense</b> and <b>SQL</b>, enabling data-driven decisions</li>
+            <li>Developed an automated exchange reconciliation job for JPX with <b>Python</b>, <b>SQL</b>, <b>KDB</b>, <b>Docker</b>, and <b>Nomad</b>, saving 30 minutes of manual work per day</li>
+            <li>Built a website that integrates with <b>NetSuite</b> and gives the accounting team control over <b>SQL</b> databases using <b>Python - Flask</b> and <b>JavaScript - Vue.js</b></li>
+            <li>Automated the Mixed Straddle tax report using <b>Qlik Sense</b> and <b>SQL</b>, saving one week of manual work per year</li>
           </ul>
 
           <p><strong>Data Engineer Intern</strong> – Geneva Trading (June 2024 – Aug 2024)</p>
           <ul>
-            <li>Built a website simplifying SQL database management with Flask & Vue.js</li>
-            <li>Developed a Q library in C++ enabling access to multiple databases</li>
+            <li>Built a website that simplifies <b>SQL</b> database management and gives Researchers and Traders access to <b>MongoDB</b> stored market data definitions using <b>Python - Flask</b> and <b>JavaScript - Vue.js</b></li>
+            <li>Wrote an abstract and scalable <b>Q</b> library in <b>C++</b> that translates between <b>KDB</b>, <b>ClickHouse</b>, and other databases giving Researchers and Traders access to more data</li>
           </ul>
 
-          <p><strong>Research Assistant</strong> – Georgia Tech (May 2024 – Dec 2024)</p>
+          <p><strong>Research Assistant</strong> – PI: Dr. Ashok Goel, Design Intelligence Lab at Georgia Institute of Technology (May 2024 – Dec 2024)</p>
           <ul>
-            <li>Implemented GPT-4 and BERT models to predict personality traits for student matching</li>
+            <li>Implemented, trained and tested <b>GPT-3.5-turbo</b>, <b>GPT-4o mini</b>, and <b>BERT</b> with <b>Bagging SVM</b> and <b>MLP</b> 
+              models to predict personality based on the Big Five personality traits for better student matching in online courses</li>
           </ul>
 
           <p><strong>Data Engineer Intern</strong> – Keena Healthcare Technology (May 2023 – Aug 2023)</p>
           <ul>
-            <li>Automated monthly insurance reports using SQL, saving 10 hours per month</li>
+            <li>Automated the creation of monthly insurance reports using <b>SQL</b>, resulting in a reduction of 10 hours of manual work per month</li>
+            <li>Created a real-time <b>SQL Server Agent</b> dashboard to keep clients informed about the progress of ongoing tasks</li>
           </ul>
 
           <q-separator spaced />
@@ -178,12 +181,6 @@
           <p><strong>Frontend:</strong> JavaScript, Vue.js, Quasar, HTML, CSS</p>
           <p><strong>Databases/ML:</strong> SQL Server, MongoDB, ClickHouse, KDB, scikit-learn</p>
           <p><strong>Tools:</strong> Git, Docker, Linux, Qlik Sense</p>
-
-          <q-separator spaced />
-
-          <div class="text-h6">Projects</div>
-          <p><strong>Ravens Agent – AI Computer Vision</strong></p>
-          <p>Developed an AI Agent capable of solving Raven’s Progressive Matrices IQ Test with 85% accuracy.</p>
         </q-card-section>
       </q-card>
     </q-dialog>
