@@ -168,19 +168,73 @@
               models to predict personality based on the Big Five personality traits for better student matching in online courses</li>
           </ul>
 
+          <p><strong>Coding Instructor</strong> – Brains and Motion Education (Feb 2024 – May 2024)</p>
+          <ul>
+            <li>Taught <b>Python</b> and Scratch in after-school programs in the Chicago area, working with students from 2nd to 7th grade</li>
+          </ul>
+
           <p><strong>Data Engineer Intern</strong> – Keena Healthcare Technology (May 2023 – Aug 2023)</p>
           <ul>
             <li>Automated the creation of monthly insurance reports using <b>SQL</b>, resulting in a reduction of 10 hours of manual work per month</li>
             <li>Created a real-time <b>SQL Server Agent</b> dashboard to keep clients informed about the progress of ongoing tasks</li>
+          </ul>
+          
+          <p><strong>Data Analyst</strong> – Eurofins PSS at Biogen (Aug 2022 – May 2023)</p>
+          <ul>
+            <li>Recognized with the <b>Impact Award</b> for going above and beyond the typical duties to assist clients</li>
+            <li>Developed a PDF data scraping tool using <b>Streamlit</b> and <b>Pandas</b> to automate data entry for protein concentration testing, reducing analysis time from 30 minutes to 5 minutes</li>
+            <li>Streamlined sample data querying by implementing a <b>SQL</b> dashboard in <b>LIMS</b> (Lab Management Software)</li>
+          </ul>
+
+          <p><strong>Product Engineer Intern</strong> – Pneuma Respiratory (Mar 2022 – Aug 2022)</p>
+          <ul>
+            <li>Optimized the battery waveform of Pneuma's product, increasing battery life by 2 hours</li>
+            <li>Enhanced the consistency of vapor dispensed by Pneuma’s product by refining and optimizing settings in <b>C++</b></li>
+          </ul>
+          
+          <p><strong>Research Assistant</strong> – PI: Dr. Bob Swarthout, Swarthout Lab at Appalachian State University (Jan 2021 – May 2022)</p>
+          <ul>
+            <li>Published in <a href="https://ui.adsabs.harvard.edu/abs/2022AGUFM.A12E..07S/abstract" target="_blank">https://ui.adsabs.harvard.edu/abs/2022AGUFM.A12E..07S/abstract</a></li>
+            <li>Developed a drone air sampling method with 97% accuracy to determine concentrations of oil seeps</li>
+            <li>Designed and programmed software in <b>C++</b> to remotely control air pumps during drone flights</li>
+          </ul>
+
+          <p><strong>Founder and President</strong> – Significant Figures Chemistry Club (Oct 2021 – May 2022)</p>
+          <ul>
+            <li>Established an inclusive STEM community at App State University, driving membership to over 50 students</li>
+            <li>Hosted club meetings, facilitating connections between students and alumni for valuable research opportunities</li>
           </ul>
 
           <q-separator spaced />
 
           <div class="text-h6">Skills</div>
           <p><strong>Backend:</strong> Python, Flask, C++, Java</p>
-          <p><strong>Frontend:</strong> JavaScript, Vue.js, Quasar, HTML, CSS</p>
-          <p><strong>Databases/ML:</strong> SQL Server, MongoDB, ClickHouse, KDB, scikit-learn</p>
-          <p><strong>Tools:</strong> Git, Docker, Linux, Qlik Sense</p>
+          <p><strong>Frontend:</strong> JavaScript, Vue.js, Quasar, HTML, CSS, Tkinter</p>
+          <p><strong>Databases/Machine Learning:</strong> SQL Server, MongoDB, ClickHouse, KDB and q, NumPy, pandas, Matplotlib, scikit-learn</p>
+          <p><strong>Data Analytics/Tools:</strong>Qlik Sense, Microsoft Suite, Git, GitHub, Bitbucket, Linux, Docker, Nomad</p>
+        </q-card-section>
+      </q-card>
+    </q-dialog>
+
+    <q-dialog v-model="showProjects">
+      <q-card class="projects-dialog">
+        <q-card-actions class="projects-header">
+          <div class="text-h5"><strong>Projects</strong></div>
+          <q-space />
+          <q-btn flat icon="ion-close" color="black" @click="showProjects = false" />
+        </q-card-actions>
+
+        <q-card-section class="projects-content">
+          <div class="row q-col-gutter-md">
+            <div class="col-xs-12 col-sm-6 col-md-4" v-for="project in projects" :key="project.name">
+              <q-card class="project-card">
+                <q-img :src="project.image" contain class="project-image" />
+                <q-card-section class="text-center">
+                  <div class="text-subtitle1">{{ project.name }}</div>
+                </q-card-section>
+              </q-card>
+            </div>
+          </div>
         </q-card-section>
       </q-card>
     </q-dialog>
@@ -241,6 +295,14 @@ export default {
     return {
       showAbout: false,
       showResume: false,
+      showProjects: false,
+      projects: [
+        { name: "keywordr", image: "/Keywordr.jpg" },
+        { name: "Ravens Agent", image: "path/to/ravens-agent.png" },
+        { name: "PaintPicker", image: "path/to/paintpicker.png" },
+        { name: "Digit Recognition", image: "path/to/digit-recognition.png" },
+        { name: "Weather App", image: "path/to/weather-app.png" }
+      ]
     };
   },
   methods: {
@@ -262,6 +324,10 @@ export default {
 
     onResume() {
       this.showResume = true;
+    },
+
+    onProjects() {
+      this.showProjects = true;
     },
 
     onToggle() {
@@ -509,6 +575,56 @@ export default {
 }
 
 .resume-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #000000;
+}
+
+.projects-dialog {
+  width: 60vw !important;
+  max-width: 1200px !important;
+  height: 55vh;
+  max-height: 55vh;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.projects-content {
+  overflow: hidden;
+}
+
+.projects-image {
+  width: 175px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 25%;
+  float: left;
+  margin-right: 20px;
+  object-fit: cover;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+@media (max-width: 1024px) {
+  .projects-image {
+    width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-image {
+    width: 100px;
+  }
+}
+
+.projects-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.projects-content p {
   font-size: 1rem;
   line-height: 1.6;
   font-weight: 500;
