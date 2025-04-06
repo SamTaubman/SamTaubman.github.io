@@ -58,7 +58,7 @@
           />
           <q-btn 
             flat 
-            label="Code" 
+            label="Projects" 
             color="black" 
             class="btn-projects"
             @click="onProjects"
@@ -216,73 +216,28 @@
       </q-card>
     </q-dialog>
 
-  <q-dialog v-model="showProjects">
-    <q-card class="projects-dialog">
-      <q-card-actions class="projects-header">
-        <div class="text-h5">Code</div>
-        <q-space />
-        <q-btn flat icon="ion-close" color="black" @click="showProjects = false" />
-      </q-card-actions>
+    <q-dialog v-model="showProjects">
+      <q-card class="projects-dialog">
+        <q-card-actions class="projects-header">
+          <div class="text-h5"><strong>Projects</strong></div>
+          <q-space />
+          <q-btn flat icon="ion-close" color="black" @click="showProjects = false" />
+        </q-card-actions>
 
-      <q-card-section class="projects-content">
-        <!-- GitHub Stats Section -->
-        <div v-if="githubStats" class="github-stats-card">
-          <div class="github-header">GitHub Stats</div>
-          <q-separator />
-          <q-list>
-            <q-item>
-              <q-item-section avatar><q-icon name="star" color="yellow" /></q-item-section>
-              <q-item-section>Total Stars: {{ githubStats.totalStars }}</q-item-section>
-            </q-item>
-
-            <q-item>
-              <q-item-section avatar><q-icon name="mdi-source-commit" /></q-item-section>
-              <q-item-section>Total Commits ({{ currentYear }}): {{ githubStats.totalCommits }}</q-item-section>
-            </q-item>
-
-            <q-item>
-              <q-item-section avatar><q-icon name="mdi-git" /></q-item-section>
-              <q-item-section>Total PRs: {{ githubStats.totalPRs }}</q-item-section>
-            </q-item>
-
-            <q-item>
-              <q-item-section avatar><q-icon name="mdi-bug" /></q-item-section>
-              <q-item-section>Total Issues: {{ githubStats.totalIssues }}</q-item-section>
-            </q-item>
-          </q-list>
-        </div>
-
-        <div class="projects-grid">
-          <q-card 
-            v-for="repo in repositories" 
-            :key="repo.id" 
-            class="project-card"
-            flat bordered
-          >
-            <q-card-section class="project-header">
-              <q-icon name="mdi-github" class="project-icon" />
-              <a :href="repo.html_url" target="_blank" class="project-title">
-                {{ repo.name }}
-              </a>
-            </q-card-section>
-
-            <q-card-section class="project-description">
-              {{ repo.description || "No description available." }}
-            </q-card-section>
-
-            <q-separator />
-
-            <q-card-section class="project-footer">
-              <q-badge outline color="blue" :label="repo.language || 'Unknown'" />
-              <q-space />
-              <q-icon name="star" color="yellow" />
-              <span>{{ repo.stargazers_count }}</span>
-            </q-card-section>
-          </q-card>
-        </div>
-      </q-card-section>
-    </q-card>
-  </q-dialog>
+        <q-card-section class="projects-content">
+          <div class="row q-col-gutter-md">
+            <div class="col-xs-12 col-sm-6 col-md-4" v-for="project in projects" :key="project.name">
+              <q-card class="project-card">
+                <q-img :src="project.image" contain class="project-image" />
+                <q-card-section class="text-center">
+                  <div class="text-subtitle1">{{ project.name }}</div>
+                </q-card-section>
+              </q-card>
+            </div>
+          </div>
+        </q-card-section>
+      </q-card>
+    </q-dialog>
 
     <div class="landscape">
       <div class="mountain"></div>
@@ -341,14 +296,14 @@ export default {
       showAbout: false,
       showResume: false,
       showProjects: false,
-      githubStats: null,
-      repositories: [],
-      currentYear: new Date().getFullYear()
+      projects: [
+        { name: "keywordr", image: "/Keywordr.jpg" },
+        { name: "Ravens Agent", image: "path/to/ravens-agent.png" },
+        { name: "PaintPicker", image: "path/to/paintpicker.png" },
+        { name: "Digit Recognition", image: "path/to/digit-recognition.png" },
+        { name: "Weather App", image: "path/to/weather-app.png" }
+      ]
     };
-  },
-  async created() {
-    await this.fetchGitHubStats();
-    await this.fetchRepositories();
   },
   methods: {
     onLinkedIn() {
@@ -378,50 +333,6 @@ export default {
     onToggle() {
       alert('Banner dismissed.');
     },
-
-    async fetchGitHubStats() {
-      try {
-        const userResponse = await fetch("https://api.github.com/users/SamTaubman");
-        const userData = await userResponse.json();
-
-        const reposResponse = await fetch(userData.repos_url);
-        const repos = await reposResponse.json();
-        const totalStars = repos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
-
-        const eventsResponse = await fetch(`https://api.github.com/users/SamTaubman/events`);
-        const events = await eventsResponse.json();
-        const totalPRs = events.filter(event => event.type === "PullRequestEvent").length;
-
-        const issuesResponse = await fetch(`https://api.github.com/search/issues?q=author:SamTaubman`);
-        const issuesData = await issuesResponse.json();
-        const totalIssues = issuesData.total_count;
-
-        let totalCommits = 0;
-        for (const repo of repos) {
-          const commitsResponse = await fetch(`https://api.github.com/repos/SamTaubman/${repo.name}/commits?author=SamTaubman`);
-          const commits = await commitsResponse.json();
-          totalCommits += commits.length;
-        }
-
-        this.githubStats = {
-          totalStars,
-          totalCommits,
-          totalPRs,
-          totalIssues
-        };
-      } catch (error) {
-        console.error("Error fetching GitHub stats:", error);
-      }
-    },
-
-    async fetchRepositories() {
-      try {
-        const response = await fetch("https://api.github.com/users/SamTaubman/repos");
-        this.repositories = await response.json();
-      } catch (error) {
-        console.error("Error fetching repositories:", error);
-      }
-    }
   },
 };
 </script>
@@ -671,10 +582,10 @@ export default {
 }
 
 .projects-dialog {
-  width: 90vw !important;
+  width: 60vw !important;
   max-width: 1200px !important;
-  height: 80vh;
-  max-height: 80vh;
+  height: 55vh;
+  max-height: 55vh;
   padding: 30px;
   border-radius: 12px;
 }
@@ -718,28 +629,6 @@ export default {
   line-height: 1.6;
   font-weight: 500;
   color: #000000;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ensures equal sizing */
-  gap: 16px;
-  justify-content: center;
-}
-
-.project-card {
-  width: 220px;
-  height: 220px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.project-image {
-  width: 100%;
-  height: 50px;
-  object-fit: cover;
 }
 
 .landscape {
