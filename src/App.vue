@@ -153,7 +153,7 @@
             <li>Created firm performance dashboards using <b>Qlik Sense</b> and <b>SQL</b>, enabling data-driven decisions</li>
             <li>Developed an automated exchange reconciliation job for JPX with <b>Python</b>, <b>SQL</b>, <b>KDB</b>, <b>Docker</b>, and <b>Nomad</b>, saving 30 minutes of manual work per day</li>
             <li>Built a website that integrates with <b>NetSuite</b> and gives the accounting team control over <b>SQL</b> databases using <b>Python - Flask</b> and <b>JavaScript - Vue.js</b></li>
-            <li>Automated the Mixed Straddle tax report using <b>Qlik Sense</b> and <b>SQL</b>, saving one week of manual work per year</li>
+            <li>Automated the Mixed Straddle tax report using <b>Qlik Sense</b> and <b>SQL</b>, saving two weeks of manual work per year</li>
           </ul>
 
           <p><strong>Data Engineer Intern</strong> – Geneva Trading (June 2024 – Aug 2024)</p>
@@ -195,7 +195,7 @@
           <p><strong>Research Assistant</strong> – PI: Dr. Bob Swarthout, Swarthout Lab at Appalachian State University (Jan 2021 – May 2022)</p>
           <ul>
             <li>Published in <a href="https://ui.adsabs.harvard.edu/abs/2022AGUFM.A12E..07S/abstract" target="_blank">https://ui.adsabs.harvard.edu/abs/2022AGUFM.A12E..07S/abstract</a></li>
-            <li>Developed a drone air sampling method with 97% accuracy to determine concentrations of oil seeps</li>
+            <li>Developed a drone air sampling method with 90% accuracy to determine concentrations of oil seeps</li>
             <li>Designed and programmed software in <b>C++</b> to remotely control air pumps during drone flights</li>
           </ul>
 
@@ -211,7 +211,7 @@
           <p><strong>Backend:</strong> Python, Flask, C++, Java</p>
           <p><strong>Frontend:</strong> JavaScript, Vue.js, Quasar, HTML, CSS, Tkinter</p>
           <p><strong>Databases/Machine Learning:</strong> SQL Server, MongoDB, ClickHouse, KDB and q, NumPy, pandas, Matplotlib, scikit-learn</p>
-          <p><strong>Data Analytics/Tools:</strong>Qlik Sense, Microsoft Suite, Git, GitHub, Bitbucket, Linux, Docker, Nomad</p>
+          <p><strong>Data Analytics/Tools:</strong> Git, GitHub, Bitbucket, Linux, Docker, Nomad, Qlik Sense, Microsoft Suite</p>
         </q-card-section>
       </q-card>
     </q-dialog>
@@ -227,12 +227,15 @@
         <q-card-section class="projects-content">
           <div class="row q-col-gutter-md">
             <div class="col-xs-12 col-sm-6 col-md-4" v-for="project in projects" :key="project.name">
-              <q-card class="project-card">
-                <q-img :src="project.image" contain class="project-image" />
-                <q-card-section class="text-center">
-                  <div class="text-subtitle1">{{ project.name }}</div>
-                </q-card-section>
-              </q-card>
+              <a :href="project.link" target="_blank" class="project-link">
+                <q-card class="project-card">
+                  <q-img :src="project.image" contain class="project-image" />
+                  <q-card-section class="text-center">
+                    <div class="text-subtitle1">{{ project.name }}</div>
+                    <div class="text-body2" style="color: #666;">{{ project.techStack }}</div>
+                  </q-card-section>
+                </q-card>
+              </a>
             </div>
           </div>
         </q-card-section>
@@ -293,15 +296,18 @@ export default {
   name: 'App',
   data() {
     return {
+      isDarkMode: false,
       showAbout: false,
       showResume: false,
       showProjects: false,
       projects: [
-        { name: "keywordr", image: "/Keywordr.jpg" },
-        { name: "Ravens Agent", image: "path/to/ravens-agent.png" },
-        { name: "PaintPicker", image: "path/to/paintpicker.png" },
-        { name: "Digit Recognition", image: "path/to/digit-recognition.png" },
-        { name: "Weather App", image: "path/to/weather-app.png" }
+        { name: "keywordr", image: "/Keywordr.jpg", link: "https://keywordr.ai/", techStack: "JavaScript, HTML, CSS" },
+        { name: "Multithreaded File Transfer Client and Server", image: "/mt.png", link: "https://github.com/SamTaubman/Multithreaded-File-Transfer-Client-and-Server", techStack: "C" },
+        { name: "Trading Strategies and Market Simulator", image: "/trading.png", link: "https://github.com/SamTaubman/ML-Trading-Strategy-and-Market-Simulator/blob/main/README.md", techStack: "Python, NumPy, Pandas, Matplotlib" },
+        { name: "Ravens IQ Test AI Agent", image: "/ravens2.png", link: "https://github.com/SamTaubman/AI_Agent_Computer_Vision", techStack: "Python, NumPy, openCV, Pillow" },
+        { name: "Advertising Data Science Exercise", image: "/ds.png", link: "https://github.com/SamTaubman/TradingData_DataScienceProject", techStack: "Python, NumPy, Pandas, Matplotlib, Seaborn" }, 
+        { name: "LRU and LFU Cache Implementations", image: "/lru2.png", link: "https://github.com/SamTaubman/LRUcache_LFUcache", techStack: "Java" },
+        { name: "Data Structures and Algorithms Implementations", image: "/bt.png", link: "https://github.com/SamTaubman/Algorithms_DataStructures_Practice", techStack: "Python" },          
       ]
     };
   },
@@ -330,8 +336,13 @@ export default {
       this.showProjects = true;
     },
 
-    onToggle() {
-      alert('Banner dismissed.');
+    onSwitchMode() {
+      this.isDarkMode = !this.isDarkMode;
+      if (this.isDarkMode) {
+        document.body.classList.add('dark-mode');
+      } else {
+        document.body.classList.remove('dark-mode');
+      }
     },
   },
 };
@@ -582,44 +593,69 @@ export default {
 }
 
 .projects-dialog {
-  width: 60vw !important;
-  max-width: 1200px !important;
-  height: 55vh;
-  max-height: 55vh;
+  width: 75vw !important;
+  max-width: 1600px !important;
+  height: 80vh;
+  max-height: 80vh;
   padding: 30px;
   border-radius: 12px;
+  overflow-y: auto;
+}
+
+.projects-header {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1000;
+  padding: 15px 10px;
+  border-bottom: 1px solid #ddd;
 }
 
 .projects-content {
-  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  overflow-y: auto;
+  height: calc(100% - 60px);
 }
 
-.projects-image {
-  width: 175px;
-  height: auto;
-  flex-shrink: 0;
-  border-radius: 25%;
-  float: left;
-  margin-right: 20px;
-  object-fit: cover;
-  overflow: hidden;
+.project-card {
+  width: 75%;
+  max-width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-@media (max-width: 1024px) {
-  .projects-image {
-    width: 120px;
-  }
+.project-link {
+  text-decoration: none;
+  color: inherit;
 }
 
-@media (max-width: 768px) {
-  .projects-image {
-    width: 100px;
-  }
+.project-link:hover {
+  text-decoration: none;
 }
 
-.projects-image:hover {
+.project-card .text-body2 {
+  font-size: 0.875rem;
+  color: #666;
+  margin-top: 1px;
+}
+
+/* .project-image {
+  width: 90% !important;
+  height: 80% !important;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+} */
+
+.project-card:hover {
   transform: scale(1.05);
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
 }
