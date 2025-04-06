@@ -87,14 +87,25 @@ body {
 */
 
 :root {
-  --v1: #d27171;
-  --v2: #5a77eb;
+  --v1: #be91c6;
+  --v2: #8a65cc;
   --v3: #5e30d9;
   --transparentv3: #5e30d900;
   --v4: #3b1895;
-  --s1: #f07b06;
-  --s2: #6ec7ff;
+  --s1: #fea798;
+  --s2: #ff846e;
   --cloud: #fea798;
+}
+
+body.dark-mode {
+  --v1: #4a2e55;
+  --v2: #3a2450;
+  --v3: #2b1340;
+  --transparentv3: rgba(43, 19, 64, 0);
+  --v4: #1b0c29;
+  --s1: #9f4b2b;
+  --s2: #a84a30;
+  --cloud: #702114;
 }
 
 /*
@@ -197,6 +208,22 @@ body {
   right: 5vmin;
   width: 20vmin;
 }
+
+/* body.dark-mode .lotus-1::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background-image: url('frog.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+} */
 
 .lotus-2 {
   bottom: 20vmin;
@@ -330,6 +357,35 @@ body {
   -webkit-animation: rise 20s infinite;
           animation: rise 20s infinite;
   box-shadow: 0 0 10px white;
+}
+
+body.dark-mode .sun {
+  background: #ccc;
+  box-shadow: 0 0 10px #ccc;
+}
+
+body.dark-mode .sun::before,
+body.dark-mode .sun::after {
+  content: "";
+  position: absolute;
+  background: #c2bdbd;
+  border-radius: 50%;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+body.dark-mode .sun::before {
+  width: 6vmin;
+  height: 5vmin;
+  top: 5vmin;
+  left: 4vmin;
+}
+
+body.dark-mode .sun::after {
+  width: 4vmin;
+  height: 4vmin;
+  top: 12vmin;
+  left: 12vmin;
 }
 
 .reed {

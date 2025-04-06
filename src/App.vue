@@ -351,6 +351,21 @@ export default {
 <style src="./assets/styles.css"></style>
 
 <style>
+/* body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .q-card {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+body.dark-mode .q-btn {
+  background-color: #555555;
+  color: #ffffff;
+} */
+
 .container {
   position: relative;
   width: 100%;
@@ -392,8 +407,9 @@ export default {
   color: #000000
 }
 
-.btn-toggle .q-icon {
-  color: #000000;
+body.dark-mode .btn-mode .q-icon {
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .banner-actions {
