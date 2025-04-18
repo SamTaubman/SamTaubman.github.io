@@ -98,14 +98,14 @@ body {
 }
 
 body.dark-mode {
-  --v1: #4a2e55;
-  --v2: #3a2450;
-  --v3: #2b1340;
-  --transparentv3: rgba(43, 19, 64, 0);
-  --v4: #1b0c29;
-  --s1: #9f4b2b;
-  --s2: #a84a30;
-  --cloud: #702114;
+  --v1: #3b2441;            /* was #4a2e55 */
+  --v2: #2e1a38;            /* was #3a2450 */
+  --v3: #210d30;            /* was #2b1340 */
+  --transparentv3: rgba(33, 13, 48, 0); /* updated to match new v3 */
+  --v4: #12061e;            /* was #1b0c29 */
+  --s1: #803623;            /* was #9f4b2b */
+  --s2: #8c3928;            /* was #a84a30 */
+  --cloud: #50140c;         /* was #702114 */
 }
 
 /*
@@ -386,6 +386,39 @@ body.dark-mode .sun::after {
   height: 4vmin;
   top: 12vmin;
   left: 12vmin;
+}
+
+body.dark-mode .stars {
+  display: block;
+}
+body:not(.dark-mode) .stars {
+  display: none;
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  width: 0.3vmin;
+  height: 0.3vmin;
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: twinkle 2s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
 }
 
 .reed {

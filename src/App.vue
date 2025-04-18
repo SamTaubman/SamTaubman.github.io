@@ -135,20 +135,23 @@
         </q-card-actions>
         
         <q-card-section class="resume-content">
-          <div class="text-subtitle1"><strong>Sam Taubman</strong></div>
-          <div>taubmansam@gmail.com | staubman6@gatech.edu | 828-406-8815</div>
+          <div class="resume-name"><strong>Sam Taubman</strong></div>
+          <div>staubman6@gatech.edu | taubmansam@gmail.com | 828-406-8815</div>
 
           <q-separator spaced />
 
           <div class="text-h6">Education</div>
-          <p><strong>Georgia Institute of Technology</strong> – M.S. in Computer Science (Computing Systems) - GPA: 4.0 -  Expected Aug 2026</p>
+          <p><strong>Georgia Institute of Technology</strong> – M.S. in Computer Science (Computing Systems) - GPA: 4.0 - Expected Aug 2026</p>
           <p><strong>Appalachian State University</strong> – B.S. in Chemistry - Honors Student, Chancellor’s Scholar, Dean’s List - May 2022</p>
 
           <q-separator spaced />
 
           <div class="text-h6">Experience</div>
 
-          <p><strong>Data Engineer</strong> – Geneva Trading (Aug 2024 – Present)</p>
+          <div class="job-header">
+            <p><strong>Data Engineer</strong> – Geneva Trading (Chicago, IL)</p>
+            <span class="location">Aug 2024 – Present</span>
+          </div>
           <ul>
             <li>Created firm performance dashboards using <b>Qlik Sense</b> and <b>SQL</b>, enabling data-driven decisions</li>
             <li>Developed an automated exchange reconciliation job for JPX with <b>Python</b>, <b>SQL</b>, <b>KDB</b>, <b>Docker</b>, and <b>Nomad</b>, saving 30 minutes of manual work per day</li>
@@ -156,50 +159,74 @@
             <li>Automated the Mixed Straddle tax report using <b>Qlik Sense</b> and <b>SQL</b>, saving two weeks of manual work per year</li>
           </ul>
 
-          <p><strong>Data Engineer Intern</strong> – Geneva Trading (June 2024 – Aug 2024)</p>
+          <div class="job-header">
+            <p><strong>Data Engineer Intern</strong> – Geneva Trading (Chicago, IL)</p>
+            <span class="location">June 2024 – Aug 2024</span>
+          </div>
           <ul>
             <li>Built a website that simplifies <b>SQL</b> database management and gives Researchers and Traders access to <b>MongoDB</b> stored market data definitions using <b>Python - Flask</b> and <b>JavaScript - Vue.js</b></li>
             <li>Wrote an abstract and scalable <b>Q</b> library in <b>C++</b> that translates between <b>KDB</b>, <b>ClickHouse</b>, and other databases giving Researchers and Traders access to more data</li>
           </ul>
-
-          <p><strong>Research Assistant</strong> – PI: Dr. Ashok Goel, Design Intelligence Lab at Georgia Institute of Technology (May 2024 – Dec 2024)</p>
+          
+          <div class="job-header">
+            <p><strong>Research Assistant</strong> – PI: Dr. Ashok Goel, Design Intelligence Lab at Georgia Institute of Technology (Chicago, IL)</p>
+            <span class="location">May 2024 – Dec 2024</span>
+          </div>
           <ul>
             <li>Implemented, trained and tested <b>GPT-3.5-turbo</b>, <b>GPT-4o mini</b>, and <b>BERT</b> with <b>Bagging SVM</b> and <b>MLP</b> 
               models to predict personality based on the Big Five personality traits for better student matching in online courses</li>
           </ul>
 
-          <p><strong>Coding Instructor</strong> – Brains and Motion Education (Feb 2024 – May 2024)</p>
+          <div class="job-header">
+            <p><strong>Coding Instructor</strong> – Brains and Motion Education (Chicago, IL)</p>
+            <span class="location">Feb 2024 – May 2024</span>
+          </div>
           <ul>
             <li>Taught <b>Python</b> and Scratch in after-school programs in the Chicago area, working with students from 2nd to 7th grade</li>
           </ul>
 
-          <p><strong>Data Engineer Intern</strong> – Keena Healthcare Technology (May 2023 – Aug 2023)</p>
+          <div class="job-header">
+            <p><strong>Data Engineer Intern</strong> – Keena Healthcare Technology (Chicago, IL)</p>
+            <span class="location">May 2023 – Aug 2023</span>
+          </div>
           <ul>
             <li>Automated the creation of monthly insurance reports using <b>SQL</b>, resulting in a reduction of 10 hours of manual work per month</li>
             <li>Created a real-time <b>SQL Server Agent</b> dashboard to keep clients informed about the progress of ongoing tasks</li>
           </ul>
           
-          <p><strong>Data Analyst</strong> – Eurofins PSS at Biogen (Aug 2022 – May 2023)</p>
+          <div class="job-header">
+            <p><strong>Data Analyst</strong> – Eurofins PSS at Biogen (Raleigh, NC)</p>
+            <span class="location">Aug 2022 – May 2023</span>
+          </div>
           <ul>
             <li>Recognized with the <b>Impact Award</b> for going above and beyond the typical duties to assist clients</li>
             <li>Developed a PDF data scraping tool using <b>Streamlit</b> and <b>Pandas</b> to automate data entry for protein concentration testing, reducing analysis time from 30 minutes to 5 minutes</li>
             <li>Streamlined sample data querying by implementing a <b>SQL</b> dashboard in <b>LIMS</b> (Lab Management Software)</li>
           </ul>
 
-          <p><strong>Product Engineer Intern</strong> – Pneuma Respiratory (Mar 2022 – Aug 2022)</p>
+          <div class="job-header">
+            <p><strong>Product Engineer Intern</strong> – Pneuma Respiratory (Boone, NC)</p>
+            <span class="location">Mar 2022 – Aug 2022</span>
+          </div>
           <ul>
             <li>Optimized the battery waveform of Pneuma's product, increasing battery life by 2 hours</li>
             <li>Enhanced the consistency of vapor dispensed by Pneuma’s product by refining and optimizing settings in <b>C++</b></li>
           </ul>
-          
-          <p><strong>Research Assistant</strong> – PI: Dr. Bob Swarthout, Swarthout Lab at Appalachian State University (Jan 2021 – May 2022)</p>
+
+          <div class="job-header">
+            <p><strong>Research Assistant</strong> – PI: Dr. Bob Swarthout, Swarthout Lab at Appalachian State University (Boone, NC)</p>
+            <span class="location">Jan 2021 – May 2022</span>
+          </div>
           <ul>
             <li>Published in <a href="https://ui.adsabs.harvard.edu/abs/2022AGUFM.A12E..07S/abstract" target="_blank">https://ui.adsabs.harvard.edu/abs/2022AGUFM.A12E..07S/abstract</a></li>
             <li>Developed a drone air sampling method with 90% accuracy to determine concentrations of oil seeps</li>
             <li>Designed and programmed software in <b>C++</b> to remotely control air pumps during drone flights</li>
           </ul>
 
-          <p><strong>Founder and President</strong> – Significant Figures Chemistry Club (Oct 2021 – May 2022)</p>
+          <div class="job-header">
+            <p><strong>Founder and President</strong> – Significant Figures Chemistry Club (Boone, NC)</p>
+            <span class="location">Oct 2021 – May 2022</span>
+          </div>
           <ul>
             <li>Established an inclusive STEM community at App State University, driving membership to over 50 students</li>
             <li>Hosted club meetings, facilitating connections between students and alumni for valuable research opportunities</li>
@@ -250,6 +277,7 @@
       <div class="sun-container">
         <div class="sun"></div>
       </div>
+      <div class="stars"></div>
       <div class="cloud"></div>
       <div class="cloud cloud-1"></div>
       <div class="sun-container sun-container-reflection">
@@ -311,7 +339,24 @@ export default {
       ]
     };
   },
+  mounted() {
+    this.generateStars();
+  },
   methods: {
+    generateStars() {
+      const starsContainer = document.querySelector('.stars');
+      starsContainer.innerHTML = '';
+
+      for (let i = 0; i < 30; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.top = `${Math.random() * 50}vh`;
+        star.style.left = `${Math.random() * 100}vw`;
+        star.style.animationDuration = `${2 + Math.random() * 3}s`;
+        star.style.animationDelay = `${Math.random() * 2}s`;
+        starsContainer.appendChild(star);
+      }
+    },
     onLinkedIn() {
       window.open('https://www.linkedin.com/in/samtaubman/', '_blank');
     },
@@ -343,6 +388,7 @@ export default {
       } else {
         document.body.classList.remove('dark-mode');
       }
+      this.generateStars();
     },
   },
 };
@@ -542,12 +588,40 @@ body.dark-mode .btn-mode .q-icon {
 }
 
 .resume-dialog {
+  display: flex;
+  flex-direction: column;
   width: 90vw !important;
   max-width: 1200px !important;
   height: 80vh;
   max-height: 80vh;
   padding: 30px;
   border-radius: 12px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.resume-name {
+  font-size: 1.1rem;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.job-header p {
+  margin: 0;
+  font-size: 1rem;
+  flex: 1;
+}
+
+.location {
+  font-size: 1.0rem;
+  /*font-weight: bold;*/
+  font-style: italic;
+  color: #000000;
 }
 
 .resume-content {
