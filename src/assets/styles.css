@@ -154,6 +154,7 @@ body.dark-mode {
   background-image: linear-gradient(var(--v1), var(--v2) 30%, var(--v3));
   box-shadow: inset -10px 0 10px -10px var(--s1);
 }
+
 .mountain:before {
   content: "";
   bottom: 0;
@@ -402,7 +403,7 @@ body:not(.dark-mode) .stars {
   width: 100%;
   height: 50vh;
   pointer-events: none;
-  z-index: 2;
+  z-index: -1;
   overflow: hidden;
 }
 

@@ -153,7 +153,8 @@
             <span class="location">Aug 2024 – Present</span>
           </div>
           <ul>
-            <li>Created firm performance dashboards using <b>Qlik Sense</b> and <b>SQL</b>, enabling data-driven decisions</li>
+            <li>Created firm performance dashboards using <b>Qlik Sense</b> and <b>SQL</b>, enabling data-driven decision-making for firm
+              partners and department heads</li>
             <li>Developed an automated exchange reconciliation job for JPX with <b>Python</b>, <b>SQL</b>, <b>KDB</b>, <b>Docker</b>, and <b>Nomad</b>, saving 30 minutes of manual work per day</li>
             <li>Built a website that integrates with <b>NetSuite</b> and gives the accounting team control over <b>SQL</b> databases using <b>Python - Flask</b> and <b>JavaScript - Vue.js</b></li>
             <li>Automated the Mixed Straddle tax report using <b>Qlik Sense</b> and <b>SQL</b>, saving two weeks of manual work per year</li>
@@ -191,7 +192,7 @@
           </div>
           <ul>
             <li>Automated the creation of monthly insurance reports using <b>SQL</b>, resulting in a reduction of 10 hours of manual work per month</li>
-            <li>Created a real-time <b>SQL Server Agent</b> dashboard to keep clients informed about the progress of ongoing tasks</li>
+            <li>Created a real-time <b>SQL Server Agent</b> dashboard to inform clients about the progress of ongoing ETL jobs</li>
           </ul>
           
           <div class="job-header">
@@ -200,7 +201,7 @@
           </div>
           <ul>
             <li>Recognized with the <b>Impact Award</b> for going above and beyond the typical duties to assist clients</li>
-            <li>Developed a PDF data scraping tool using <b>Streamlit</b> and <b>Pandas</b> to automate data entry for protein concentration testing, reducing analysis time from 30 minutes to 5 minutes</li>
+            <li>Developed a PDF data scraping tool using <b>Python</b>, <b>Pandas</b>, and <b>Streamlit</b> to automate data entry for protein concentration testing, reducing analysis time from 30 minutes to 5 minutes</li>
             <li>Streamlined sample data querying by implementing a <b>SQL</b> dashboard in <b>LIMS</b> (Lab Management Software)</li>
           </ul>
 
@@ -237,8 +238,8 @@
           <div class="text-h6">Skills</div>
           <p><strong>Backend:</strong> Python, Flask, C++, Java</p>
           <p><strong>Frontend:</strong> JavaScript, Vue.js, Quasar, HTML, CSS, Tkinter</p>
-          <p><strong>Databases/Machine Learning:</strong> SQL Server, MongoDB, ClickHouse, KDB and q, NumPy, pandas, Matplotlib, scikit-learn</p>
-          <p><strong>Data Analytics/Tools:</strong> Git, GitHub, Bitbucket, Linux, Docker, Nomad, Qlik Sense, Microsoft Suite</p>
+          <p><strong>Databases/Machine Learning:</strong> SQL Server, MongoDB, ClickHouse, KDB and Q, NumPy, Pandas, scikit-learn</p>
+          <p><strong>Data Analytics/Tools:</strong> Git, GitHub, Bitbucket, Linux, Docker, Nomad, Qlik Sense, Matplotlib, Microsoft Suite</p>
         </q-card-section>
       </q-card>
     </q-dialog>
@@ -347,7 +348,7 @@ export default {
       const starsContainer = document.querySelector('.stars');
       starsContainer.innerHTML = '';
 
-      for (let i = 0; i < 30; i++) {
+      for (let i = 0; i < 40; i++) {
         const star = document.createElement('div');
         star.classList.add('star');
         star.style.top = `${Math.random() * 50}vh`;
