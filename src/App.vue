@@ -348,7 +348,7 @@ export default {
       const starsContainer = document.querySelector('.stars');
       starsContainer.innerHTML = '';
 
-      for (let i = 0; i < 40; i++) {
+      for (let i = 0; i < 50; i++) {
         const star = document.createElement('div');
         star.classList.add('star');
         star.style.top = `${Math.random() * 50}vh`;
